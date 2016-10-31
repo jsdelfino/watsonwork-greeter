@@ -45,6 +45,13 @@ cd watsonwork-greeter
 npm run build
 ```
 
+### Deploy to Bluemix
+
+If you have a Bluemix account, you can also just deploy the app to Bluemix.
+It will automatically build on Bluemix when you deploy it.
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.svg)](https://bluemix.net/deploy?repository=https://github.com/jsdelfino/watsonwork-greeter&branch=bluemix)
+
 ### Start the app
 
 You're now ready to start the sample Greeter app!
