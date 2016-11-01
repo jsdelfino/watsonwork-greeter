@@ -1,0 +1,39 @@
+---
+stages:
+- name: Build Stage
+  inputs:
+  - type: git
+    branch: bluemix
+  triggers:
+  - type: commit
+  jobs:
+  - name: Build
+    type: builder
+    artifact_dir: ''
+    build_type: npm
+    script: |-
+      #!/bin/bash
+      node --version
+      npm --version
+      export NODE_ENV=development
+      npm install
+      npm run babel
+- name: Deploy Stage
+  inputs:
+  - type: job
+    stage: Build Stage
+    job: Build
+  triggers:
+  - type: stage
+  jobs:
+  - name: Deploy to dev
+    type: deployer
+    target:
+      region_id: ${BLUEMIX_REGION_ID}
+      organization: ${CF_ORGANIZATION}
+      space: ${CF_SPACE}
+      application: ${CF_APP}
+    script: |-
+      #!/bin/bash
+      cf push "${CF_APP}"
+      cf logs "${CF_APP}" --recent
