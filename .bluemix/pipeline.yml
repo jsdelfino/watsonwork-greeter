@@ -13,8 +13,7 @@ stages:
     build_type: npm
     script: |-
       #!/bin/bash
-      node --version
-      npm --version
+      export PATH=/opt/IBM/node-v6.2.2/bin:$PATH
       export NODE_ENV=development
       npm install
       npm run babel
@@ -36,4 +35,3 @@ stages:
     script: |-
       #!/bin/bash
       cf push "${CF_APP}"
-      cf logs "${CF_APP}" --recent
