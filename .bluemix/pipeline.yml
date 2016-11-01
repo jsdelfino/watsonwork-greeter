@@ -24,6 +24,13 @@ stages:
     job: Build
   triggers:
   - type: stage
+  properties:
+  - name: GREETER_APP_ID
+    type: text
+  - name: GREETER_APP_SECRET
+    type: secure
+  - name: GREETER_WEBHOOK_SECRET
+    type: secure
   jobs:
   - name: Deploy to dev
     type: deployer
