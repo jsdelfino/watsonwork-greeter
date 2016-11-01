@@ -50,7 +50,7 @@ npm run build
 If you have a Bluemix account, you can also just deploy the app to Bluemix.
 It will automatically build on Bluemix when you deploy it.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.svg)](https://bluemix.net/deploy?repository=https://github.com/jsdelfino/watsonwork-greeter&branch=bluemix)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/jsdelfino/watsonwork-greeter&branch=bluemix)
 
 ### Start the app
 
