@@ -25,7 +25,7 @@ stages:
   triggers:
   - type: stage
   jobs:
-  - name: Deploy to dev
+  - name: Deploy
     type: deployer
     target:
       region_id: ${BLUEMIX_REGION_ID}
